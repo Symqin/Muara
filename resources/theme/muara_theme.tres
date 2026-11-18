@@ -1,47 +1,49 @@
-[gd_resource type="Theme" format=3]
+[gd_resource type="Theme" format=3 uid="uid://sncgv3tv8amu"]
 
-[ext_resource type="FontFile" path="res://fonts/DejaVuSans.ttf" id="1_font"]
-[ext_resource type="FontFile" path="res://fonts/DejaVuSans-Bold.ttf" id="2_bold"]
-[ext_resource type="Texture2D" path="res://art/ui_btn.png" id="3_btn"]
-[ext_resource type="Texture2D" path="res://art/ui_btn_hover.png" id="4_btn_hover"]
-[ext_resource type="Texture2D" path="res://art/ui_btn_pressed.png" id="5_btn_pressed"]
-[ext_resource type="Texture2D" path="res://art/ui_btn_disabled.png" id="6_btn_disabled"]
-[ext_resource type="Texture2D" path="res://art/ui_btn_primary.png" id="7_pri"]
-[ext_resource type="Texture2D" path="res://art/ui_btn_primary_hover.png" id="8_pri_hover"]
-[ext_resource type="Texture2D" path="res://art/ui_btn_primary_pressed.png" id="9_pri_pressed"]
-[ext_resource type="Texture2D" path="res://art/ui_panel.png" id="10_panel"]
-[ext_resource type="Texture2D" path="res://art/ui_ribbon.png" id="11_ribbon"]
-[ext_resource type="Texture2D" path="res://art/ui_knob.png" id="12_knob"]
-[ext_resource type="Texture2D" path="res://art/ui_toggle_on.png" id="13_on"]
-[ext_resource type="Texture2D" path="res://art/ui_toggle_off.png" id="14_off"]
-[ext_resource type="Texture2D" path="res://art/ui_hud_panel.png" id="15_ui_hud_panel"]
-[ext_resource type="Texture2D" path="res://art/ui_hint_panel.png" id="16_ui_hint_panel"]
-[ext_resource type="Texture2D" path="res://art/ui_bar_bg.png" id="17_ui_bar_bg"]
-[ext_resource type="Texture2D" path="res://art/ui_bar_green.png" id="18_ui_bar_green"]
-[ext_resource type="Texture2D" path="res://art/ui_bar_blue.png" id="19_ui_bar_blue"]
-[ext_resource type="Texture2D" path="res://art/ui_bar_red.png" id="20_ui_bar_red"]
-[ext_resource type="Texture2D" path="res://art/ui_slider_track.png" id="21_ui_slider_track"]
-[ext_resource type="Texture2D" path="res://art/ui_slider_fill.png" id="22_ui_slider_fill"]
-[ext_resource type="Texture2D" path="res://art/ui_node_river.png" id="23_ui_node_river"]
-[ext_resource type="Texture2D" path="res://art/ui_node_river_hover.png" id="24_ui_node_river_hover"]
-[ext_resource type="Texture2D" path="res://art/ui_node_sea.png" id="25_ui_node_sea"]
-[ext_resource type="Texture2D" path="res://art/ui_node_sea_hover.png" id="26_ui_node_sea_hover"]
-[ext_resource type="Texture2D" path="res://art/ui_node_locked.png" id="27_ui_node_locked"]
-[ext_resource type="Texture2D" path="res://art/ui_slot.png" id="28_ui_slot"]
-[ext_resource type="Texture2D" path="res://art/ui_slot_selected.png" id="29_ui_slot_selected"]
-[ext_resource type="Texture2D" path="res://art/ui_slot_locked.png" id="30_ui_slot_locked"]
-[ext_resource type="Texture2D" path="res://art/ui_round_btn.png" id="31_ui_round_btn"]
+[ext_resource type="FontFile" uid="uid://dof4btg7xvxqf" path="res://fonts/DejaVuSans.ttf" id="1_font"]
+[ext_resource type="FontFile" uid="uid://deb7attdt7qug" path="res://fonts/DejaVuSans-Bold.ttf" id="2_bold"]
+[ext_resource type="Texture2D" uid="uid://lrtay1i4iwvx" path="res://art/ui_btn.png" id="3_btn"]
+[ext_resource type="Texture2D" uid="uid://d840hh4myyod" path="res://art/ui_btn_hover.png" id="4_btn_hover"]
+[ext_resource type="Texture2D" uid="uid://djoqbrwrguvw2" path="res://art/ui_btn_pressed.png" id="5_btn_pressed"]
+[ext_resource type="Texture2D" uid="uid://bmwofmcu6b5w3" path="res://art/ui_btn_disabled.png" id="6_btn_disabled"]
+[ext_resource type="Texture2D" uid="uid://bdvya7wc804x6" path="res://art/ui_btn_primary.png" id="7_pri"]
+[ext_resource type="Texture2D" uid="uid://cevcsrm6ir3m8" path="res://art/ui_btn_primary_hover.png" id="8_pri_hover"]
+[ext_resource type="Texture2D" uid="uid://d0oeb0osc0w6d" path="res://art/ui_btn_primary_pressed.png" id="9_pri_pressed"]
+[ext_resource type="Texture2D" uid="uid://dxtrhx0lui130" path="res://art/ui_panel.png" id="10_panel"]
+[ext_resource type="Texture2D" uid="uid://b8jcdlr5qibm1" path="res://art/ui_ribbon.png" id="11_ribbon"]
+[ext_resource type="Texture2D" uid="uid://cv617l6g81irn" path="res://art/ui_knob.png" id="12_knob"]
+[ext_resource type="Texture2D" uid="uid://d0v5votadt63k" path="res://art/ui_toggle_on.png" id="13_on"]
+[ext_resource type="Texture2D" uid="uid://b4jsa5ockr5wf" path="res://art/ui_toggle_off.png" id="14_off"]
+[ext_resource type="Texture2D" uid="uid://cg8hh3nvciwwo" path="res://art/ui_hud_panel.png" id="15_ui_hud_panel"]
+[ext_resource type="Texture2D" uid="uid://drd0ixuhm0q0i" path="res://art/ui_hint_panel.png" id="16_ui_hint_panel"]
+[ext_resource type="Texture2D" uid="uid://bdb8cb4lr6ulp" path="res://art/ui_bar_bg.png" id="17_ui_bar_bg"]
+[ext_resource type="Texture2D" uid="uid://cvmqn0taivl2a" path="res://art/ui_bar_green.png" id="18_ui_bar_green"]
+[ext_resource type="Texture2D" uid="uid://gwk2npy2rqo3" path="res://art/ui_bar_blue.png" id="19_ui_bar_blue"]
+[ext_resource type="Texture2D" uid="uid://5g76cmu2v5d6" path="res://art/ui_bar_red.png" id="20_ui_bar_red"]
+[ext_resource type="Texture2D" uid="uid://c6s8hef3crqqb" path="res://art/ui_slider_track.png" id="21_ui_slider_track"]
+[ext_resource type="Texture2D" uid="uid://cjflsfivck5wj" path="res://art/ui_slider_fill.png" id="22_ui_slider_fill"]
+[ext_resource type="Texture2D" uid="uid://dsixufjvlocwi" path="res://art/ui_node_river.png" id="23_ui_node_river"]
+[ext_resource type="Texture2D" uid="uid://t2hcxth3s5gq" path="res://art/ui_node_river_hover.png" id="24_ui_node_river_hover"]
+[ext_resource type="Texture2D" uid="uid://dnqtmnhwsmcwl" path="res://art/ui_node_sea.png" id="25_ui_node_sea"]
+[ext_resource type="Texture2D" uid="uid://k7pqfjvwqe7g" path="res://art/ui_node_sea_hover.png" id="26_ui_node_sea_hover"]
+[ext_resource type="Texture2D" uid="uid://di8xbeylflh0a" path="res://art/ui_node_locked.png" id="27_ui_node_locked"]
+[ext_resource type="Texture2D" uid="uid://0vk0xlifopl8" path="res://art/ui_slot.png" id="28_ui_slot"]
+[ext_resource type="Texture2D" uid="uid://cokgxu8qqvpmu" path="res://art/ui_slot_selected.png" id="29_ui_slot_selected"]
+[ext_resource type="Texture2D" uid="uid://dpxnedx8kjqxj" path="res://art/ui_slot_locked.png" id="30_ui_slot_locked"]
+[ext_resource type="Texture2D" uid="uid://c3n6to4vf3l4y" path="res://art/ui_round_btn.png" id="31_ui_round_btn"]
 
-[sub_resource type="StyleBoxTexture" id="Btn"]
+[sub_resource type="StyleBoxTexture" id="BtnDisabled"]
 content_margin_left = 24.0
 content_margin_top = 10.0
 content_margin_right = 24.0
 content_margin_bottom = 18.0
-texture = ExtResource("3_btn")
+texture = ExtResource("6_btn_disabled")
 texture_margin_left = 36.0
 texture_margin_top = 36.0
 texture_margin_right = 36.0
 texture_margin_bottom = 36.0
+
+[sub_resource type="StyleBoxEmpty" id="Empty"]
 
 [sub_resource type="StyleBoxTexture" id="BtnHover"]
 content_margin_left = 24.0
@@ -49,6 +51,17 @@ content_margin_top = 10.0
 content_margin_right = 24.0
 content_margin_bottom = 18.0
 texture = ExtResource("4_btn_hover")
+texture_margin_left = 36.0
+texture_margin_top = 36.0
+texture_margin_right = 36.0
+texture_margin_bottom = 36.0
+
+[sub_resource type="StyleBoxTexture" id="Btn"]
+content_margin_left = 24.0
+content_margin_top = 10.0
+content_margin_right = 24.0
+content_margin_bottom = 18.0
+texture = ExtResource("3_btn")
 texture_margin_left = 36.0
 texture_margin_top = 36.0
 texture_margin_right = 36.0
@@ -65,84 +78,19 @@ texture_margin_top = 36.0
 texture_margin_right = 36.0
 texture_margin_bottom = 36.0
 
-[sub_resource type="StyleBoxTexture" id="BtnDisabled"]
-content_margin_left = 24.0
-content_margin_top = 10.0
-content_margin_right = 24.0
-content_margin_bottom = 18.0
-texture = ExtResource("6_btn_disabled")
-texture_margin_left = 36.0
-texture_margin_top = 36.0
-texture_margin_right = 36.0
-texture_margin_bottom = 36.0
+[sub_resource type="StyleBoxTexture" id="SliderFill"]
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+texture = ExtResource("22_ui_slider_fill")
+texture_margin_left = 10.0
+texture_margin_right = 10.0
 
-[sub_resource type="StyleBoxTexture" id="Pri"]
-content_margin_left = 24.0
-content_margin_top = 10.0
-content_margin_right = 24.0
-content_margin_bottom = 18.0
-texture = ExtResource("7_pri")
-texture_margin_left = 36.0
-texture_margin_top = 36.0
-texture_margin_right = 36.0
-texture_margin_bottom = 36.0
-
-[sub_resource type="StyleBoxTexture" id="PriHover"]
-content_margin_left = 24.0
-content_margin_top = 10.0
-content_margin_right = 24.0
-content_margin_bottom = 18.0
-texture = ExtResource("8_pri_hover")
-texture_margin_left = 36.0
-texture_margin_top = 36.0
-texture_margin_right = 36.0
-texture_margin_bottom = 36.0
-
-[sub_resource type="StyleBoxTexture" id="PriPressed"]
-content_margin_left = 24.0
-content_margin_top = 16.0
-content_margin_right = 24.0
-content_margin_bottom = 12.0
-texture = ExtResource("9_pri_pressed")
-texture_margin_left = 36.0
-texture_margin_top = 36.0
-texture_margin_right = 36.0
-texture_margin_bottom = 36.0
-
-[sub_resource type="StyleBoxEmpty" id="Empty"]
-
-[sub_resource type="StyleBoxTexture" id="Panel"]
-content_margin_left = 48.0
-content_margin_top = 40.0
-content_margin_right = 48.0
-content_margin_bottom = 48.0
-texture = ExtResource("10_panel")
-texture_margin_left = 56.0
-texture_margin_top = 56.0
-texture_margin_right = 56.0
-texture_margin_bottom = 56.0
-
-[sub_resource type="StyleBoxTexture" id="Ribbon"]
-content_margin_left = 100.0
-content_margin_top = 14.0
-content_margin_right = 100.0
-content_margin_bottom = 34.0
-texture = ExtResource("11_ribbon")
-texture_margin_left = 96.0
-texture_margin_top = 30.0
-texture_margin_right = 96.0
-texture_margin_bottom = 30.0
-
-[sub_resource type="StyleBoxTexture" id="HudPanel"]
-content_margin_left = 26.0
-content_margin_top = 14.0
-content_margin_right = 26.0
-content_margin_bottom = 16.0
-texture = ExtResource("15_ui_hud_panel")
-texture_margin_left = 36.0
-texture_margin_top = 36.0
-texture_margin_right = 36.0
-texture_margin_bottom = 36.0
+[sub_resource type="StyleBoxTexture" id="SliderTrack"]
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+texture = ExtResource("21_ui_slider_track")
+texture_margin_left = 10.0
+texture_margin_right = 10.0
 
 [sub_resource type="StyleBoxTexture" id="HintPanel"]
 content_margin_left = 30.0
@@ -162,13 +110,13 @@ texture = ExtResource("17_ui_bar_bg")
 texture_margin_left = 14.0
 texture_margin_right = 14.0
 
-[sub_resource type="StyleBoxTexture" id="BarGreen"]
-texture = ExtResource("18_ui_bar_green")
+[sub_resource type="StyleBoxTexture" id="BarBlue"]
+texture = ExtResource("19_ui_bar_blue")
 texture_margin_left = 14.0
 texture_margin_right = 14.0
 
-[sub_resource type="StyleBoxTexture" id="BarBlue"]
-texture = ExtResource("19_ui_bar_blue")
+[sub_resource type="StyleBoxTexture" id="BarGreen"]
+texture = ExtResource("18_ui_bar_green")
 texture_margin_left = 14.0
 texture_margin_right = 14.0
 
@@ -177,54 +125,116 @@ texture = ExtResource("20_ui_bar_red")
 texture_margin_left = 14.0
 texture_margin_right = 14.0
 
-[sub_resource type="StyleBoxTexture" id="SliderTrack"]
-content_margin_top = 8.0
-content_margin_bottom = 8.0
-texture = ExtResource("21_ui_slider_track")
-texture_margin_left = 10.0
-texture_margin_right = 10.0
-
-[sub_resource type="StyleBoxTexture" id="SliderFill"]
-content_margin_top = 8.0
-content_margin_bottom = 8.0
-texture = ExtResource("22_ui_slider_fill")
-texture_margin_left = 10.0
-texture_margin_right = 10.0
-
-[sub_resource type="StyleBoxTexture" id="NodeRiver"]
-expand_margin_left = 12.0
-expand_margin_top = 12.0
-expand_margin_right = 12.0
-expand_margin_bottom = 12.0
-texture = ExtResource("23_ui_node_river")
-
-[sub_resource type="StyleBoxTexture" id="NodeRiverHover"]
-expand_margin_left = 12.0
-expand_margin_top = 12.0
-expand_margin_right = 12.0
-expand_margin_bottom = 12.0
-texture = ExtResource("24_ui_node_river_hover")
-
-[sub_resource type="StyleBoxTexture" id="NodeSea"]
-expand_margin_left = 12.0
-expand_margin_top = 12.0
-expand_margin_right = 12.0
-expand_margin_bottom = 12.0
-texture = ExtResource("25_ui_node_sea")
-
-[sub_resource type="StyleBoxTexture" id="NodeSeaHover"]
-expand_margin_left = 12.0
-expand_margin_top = 12.0
-expand_margin_right = 12.0
-expand_margin_bottom = 12.0
-texture = ExtResource("26_ui_node_sea_hover")
+[sub_resource type="StyleBoxTexture" id="HudPanel"]
+content_margin_left = 26.0
+content_margin_top = 14.0
+content_margin_right = 26.0
+content_margin_bottom = 16.0
+texture = ExtResource("15_ui_hud_panel")
+texture_margin_left = 36.0
+texture_margin_top = 36.0
+texture_margin_right = 36.0
+texture_margin_bottom = 36.0
 
 [sub_resource type="StyleBoxTexture" id="NodeLocked"]
+texture = ExtResource("27_ui_node_locked")
 expand_margin_left = 12.0
 expand_margin_top = 12.0
 expand_margin_right = 12.0
 expand_margin_bottom = 12.0
-texture = ExtResource("27_ui_node_locked")
+
+[sub_resource type="StyleBoxTexture" id="NodeRiverHover"]
+texture = ExtResource("24_ui_node_river_hover")
+expand_margin_left = 12.0
+expand_margin_top = 12.0
+expand_margin_right = 12.0
+expand_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxTexture" id="NodeRiver"]
+texture = ExtResource("23_ui_node_river")
+expand_margin_left = 12.0
+expand_margin_top = 12.0
+expand_margin_right = 12.0
+expand_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxTexture" id="NodeSeaHover"]
+texture = ExtResource("26_ui_node_sea_hover")
+expand_margin_left = 12.0
+expand_margin_top = 12.0
+expand_margin_right = 12.0
+expand_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxTexture" id="NodeSea"]
+texture = ExtResource("25_ui_node_sea")
+expand_margin_left = 12.0
+expand_margin_top = 12.0
+expand_margin_right = 12.0
+expand_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxTexture" id="Panel"]
+content_margin_left = 48.0
+content_margin_top = 40.0
+content_margin_right = 48.0
+content_margin_bottom = 48.0
+texture = ExtResource("10_panel")
+texture_margin_left = 56.0
+texture_margin_top = 56.0
+texture_margin_right = 56.0
+texture_margin_bottom = 56.0
+
+[sub_resource type="StyleBoxTexture" id="PriHover"]
+content_margin_left = 24.0
+content_margin_top = 10.0
+content_margin_right = 24.0
+content_margin_bottom = 18.0
+texture = ExtResource("8_pri_hover")
+texture_margin_left = 36.0
+texture_margin_top = 36.0
+texture_margin_right = 36.0
+texture_margin_bottom = 36.0
+
+[sub_resource type="StyleBoxTexture" id="Pri"]
+content_margin_left = 24.0
+content_margin_top = 10.0
+content_margin_right = 24.0
+content_margin_bottom = 18.0
+texture = ExtResource("7_pri")
+texture_margin_left = 36.0
+texture_margin_top = 36.0
+texture_margin_right = 36.0
+texture_margin_bottom = 36.0
+
+[sub_resource type="StyleBoxTexture" id="PriPressed"]
+content_margin_left = 24.0
+content_margin_top = 16.0
+content_margin_right = 24.0
+content_margin_bottom = 12.0
+texture = ExtResource("9_pri_pressed")
+texture_margin_left = 36.0
+texture_margin_top = 36.0
+texture_margin_right = 36.0
+texture_margin_bottom = 36.0
+
+[sub_resource type="StyleBoxTexture" id="Ribbon"]
+content_margin_left = 100.0
+content_margin_top = 14.0
+content_margin_right = 100.0
+content_margin_bottom = 34.0
+texture = ExtResource("11_ribbon")
+texture_margin_left = 96.0
+texture_margin_top = 30.0
+texture_margin_right = 96.0
+texture_margin_bottom = 30.0
+
+[sub_resource type="StyleBoxTexture" id="RoundHud"]
+texture = ExtResource("31_ui_round_btn")
+
+[sub_resource type="StyleBoxTexture" id="SlotLocked"]
+texture = ExtResource("30_ui_slot_locked")
+texture_margin_left = 30.0
+texture_margin_top = 30.0
+texture_margin_right = 30.0
+texture_margin_bottom = 30.0
 
 [sub_resource type="StyleBoxTexture" id="Slot"]
 texture = ExtResource("28_ui_slot")
@@ -239,16 +249,6 @@ texture_margin_left = 30.0
 texture_margin_top = 30.0
 texture_margin_right = 30.0
 texture_margin_bottom = 30.0
-
-[sub_resource type="StyleBoxTexture" id="SlotLocked"]
-texture = ExtResource("30_ui_slot_locked")
-texture_margin_left = 30.0
-texture_margin_top = 30.0
-texture_margin_right = 30.0
-texture_margin_bottom = 30.0
-
-[sub_resource type="StyleBoxTexture" id="RoundHud"]
-texture = ExtResource("31_ui_round_btn")
 
 [resource]
 default_font = ExtResource("1_font")

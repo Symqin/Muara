@@ -20,7 +20,7 @@ const PART_RANGE = {"Base": [0, 6], "Mid": [5, 11], "Tip": [10, 16]}
 # arah dasar (radian), panjang, dan titik pangkal tiap tentakel
 const TENT_ANGLE = [3.05, 2.75, 2.4, 2.0, 1.45, 0.95]
 const TENT_LEN = [470.0, 450.0, 400.0, 340.0, 300.0, 260.0]
-const TENT_BASE = [Vector2(-90, 40), Vector2(-60, 60), Vector2(-25, 72), Vector2(15, 72), Vector2(55, 60), Vector2(90, 40)]
+const TENT_BASE = [Vector2(-90, 40), Vector2(-60, 60), Vector2(-25, 72), Vector2(15, 72), Vector2(55, 60), Vector2(75, 45)]
 const PIECE_R = 30.0
 
 @export var hp_max: float = 100.0

@@ -1,184 +1,183 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://cj071mqoxt5ng"]
 
-[ext_resource type="Script" path="res://scripts/level/kraken/kraken.gd" id="1_script"]
-[ext_resource type="Texture2D" path="res://art/kraken_head.png" id="2_head"]
-[ext_resource type="Texture2D" path="res://art/kraken_face.png" id="3_worried"]
-[ext_resource type="Texture2D" path="res://art/kraken_face_hurt.png" id="4_hurt"]
-[ext_resource type="Texture2D" path="res://art/kraken_face_happy.png" id="5_happy"]
-[ext_resource type="Texture2D" path="res://art/kraken_tentacle_1_tip.png" id="6_t1_tip"]
-[ext_resource type="Texture2D" path="res://art/kraken_tentacle_1_mid.png" id="7_t1_mid"]
-[ext_resource type="Texture2D" path="res://art/kraken_tentacle_1_base.png" id="8_t1_base"]
-[ext_resource type="Texture2D" path="res://art/kraken_tentacle_2_tip.png" id="9_t2_tip"]
-[ext_resource type="Texture2D" path="res://art/kraken_tentacle_2_mid.png" id="10_t2_mid"]
-[ext_resource type="Texture2D" path="res://art/kraken_tentacle_2_base.png" id="11_t2_base"]
-[ext_resource type="Texture2D" path="res://art/kraken_tentacle_3_tip.png" id="12_t3_tip"]
-[ext_resource type="Texture2D" path="res://art/kraken_tentacle_3_mid.png" id="13_t3_mid"]
-[ext_resource type="Texture2D" path="res://art/kraken_tentacle_3_base.png" id="14_t3_base"]
-[ext_resource type="Texture2D" path="res://art/kraken_tentacle_4_tip.png" id="15_t4_tip"]
-[ext_resource type="Texture2D" path="res://art/kraken_tentacle_4_mid.png" id="16_t4_mid"]
-[ext_resource type="Texture2D" path="res://art/kraken_tentacle_4_base.png" id="17_t4_base"]
-[ext_resource type="Texture2D" path="res://art/kraken_tentacle_5_tip.png" id="18_t5_tip"]
-[ext_resource type="Texture2D" path="res://art/kraken_tentacle_5_mid.png" id="19_t5_mid"]
-[ext_resource type="Texture2D" path="res://art/kraken_tentacle_5_base.png" id="20_t5_base"]
-[ext_resource type="Texture2D" path="res://art/kraken_tentacle_6_tip.png" id="21_t6_tip"]
-[ext_resource type="Texture2D" path="res://art/kraken_tentacle_6_mid.png" id="22_t6_mid"]
-[ext_resource type="Texture2D" path="res://art/kraken_tentacle_6_base.png" id="23_t6_base"]
+[ext_resource type="Script" uid="uid://0dfys6qutnmw" path="res://scripts/level/kraken/kraken.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://dmdfrfdcewpoc" path="res://art/kraken_head.png" id="2_head"]
+[ext_resource type="Texture2D" uid="uid://d4ktby345c6ib" path="res://art/kraken_face.png" id="3_worried"]
+[ext_resource type="Texture2D" uid="uid://b2mla4u8c1p4" path="res://art/kraken_face_hurt.png" id="4_hurt"]
+[ext_resource type="Texture2D" uid="uid://b10n211768bi" path="res://art/kraken_face_happy.png" id="5_happy"]
+[ext_resource type="Texture2D" uid="uid://cm1j8mb3aqo06" path="res://art/kraken_tentacle_1_tip.png" id="6_t1_tip"]
+[ext_resource type="Texture2D" uid="uid://d0gymphrjlrk4" path="res://art/kraken_tentacle_1_mid.png" id="7_t1_mid"]
+[ext_resource type="Texture2D" uid="uid://kg8db3d083qy" path="res://art/kraken_tentacle_1_base.png" id="8_t1_base"]
+[ext_resource type="Texture2D" uid="uid://bg07b6ygjot08" path="res://art/kraken_tentacle_2_tip.png" id="9_t2_tip"]
+[ext_resource type="Texture2D" uid="uid://br03rk831uirr" path="res://art/kraken_tentacle_2_mid.png" id="10_t2_mid"]
+[ext_resource type="Texture2D" uid="uid://cr0qyg4nbbg58" path="res://art/kraken_tentacle_2_base.png" id="11_t2_base"]
+[ext_resource type="Texture2D" uid="uid://c5fuhvw2cgm68" path="res://art/kraken_tentacle_3_tip.png" id="12_t3_tip"]
+[ext_resource type="Texture2D" uid="uid://6sbr3ondnhup" path="res://art/kraken_tentacle_3_mid.png" id="13_t3_mid"]
+[ext_resource type="Texture2D" uid="uid://cm4chgubqtu14" path="res://art/kraken_tentacle_3_base.png" id="14_t3_base"]
+[ext_resource type="Texture2D" uid="uid://u3jr7bhd6g3o" path="res://art/kraken_tentacle_4_tip.png" id="15_t4_tip"]
+[ext_resource type="Texture2D" uid="uid://cqdh4jga3bjnn" path="res://art/kraken_tentacle_4_mid.png" id="16_t4_mid"]
+[ext_resource type="Texture2D" uid="uid://gyhqft6aemyq" path="res://art/kraken_tentacle_4_base.png" id="17_t4_base"]
+[ext_resource type="Texture2D" uid="uid://bmrkrhjgm4mvr" path="res://art/kraken_tentacle_5_tip.png" id="18_t5_tip"]
+[ext_resource type="Texture2D" uid="uid://cvhddunn334br" path="res://art/kraken_tentacle_5_mid.png" id="19_t5_mid"]
+[ext_resource type="Texture2D" uid="uid://b0j6qhh2mlmg7" path="res://art/kraken_tentacle_5_base.png" id="20_t5_base"]
+[ext_resource type="Texture2D" uid="uid://b5d3rc54xfsog" path="res://art/kraken_tentacle_6_tip.png" id="21_t6_tip"]
+[ext_resource type="Texture2D" uid="uid://c63uxv1ahlro" path="res://art/kraken_tentacle_6_mid.png" id="22_t6_mid"]
+[ext_resource type="Texture2D" uid="uid://db5bbwstjsqnr" path="res://art/kraken_tentacle_6_base.png" id="23_t6_base"]
 
-[node name="Kraken" type="Node2D"]
+[node name="Kraken" type="Node2D" unique_id=1449443682]
 position = Vector2(1440, 520)
 script = ExtResource("1_script")
 face_worried = ExtResource("3_worried")
 face_hurt = ExtResource("4_hurt")
 face_happy = ExtResource("5_happy")
 
-[node name="Tentacles" type="Node2D" parent="."]
+[node name="Tentacles" type="Node2D" parent="." unique_id=1698513690]
 
-[node name="Tentacle0" type="Node2D" parent="Tentacles"]
+[node name="Tentacle0" type="Node2D" parent="Tentacles" unique_id=913493932]
 
-[node name="Tip" type="Line2D" parent="Tentacles/Tentacle0"]
+[node name="Tip" type="Line2D" parent="Tentacles/Tentacle0" unique_id=1431793798]
 width = 84.0
 texture = ExtResource("6_t1_tip")
 texture_mode = 2
 joint_mode = 2
 
-[node name="Mid" type="Line2D" parent="Tentacles/Tentacle0"]
+[node name="Mid" type="Line2D" parent="Tentacles/Tentacle0" unique_id=385837184]
 width = 84.0
 texture = ExtResource("7_t1_mid")
 texture_mode = 2
 joint_mode = 2
 
-[node name="Base" type="Line2D" parent="Tentacles/Tentacle0"]
+[node name="Base" type="Line2D" parent="Tentacles/Tentacle0" unique_id=1611894110]
 width = 84.0
 texture = ExtResource("8_t1_base")
 texture_mode = 2
 joint_mode = 2
 
-[node name="Tentacle1" type="Node2D" parent="Tentacles"]
+[node name="Tentacle1" type="Node2D" parent="Tentacles" unique_id=1919352240]
 
-[node name="Tip" type="Line2D" parent="Tentacles/Tentacle1"]
+[node name="Tip" type="Line2D" parent="Tentacles/Tentacle1" unique_id=1303832010]
 width = 84.0
 texture = ExtResource("9_t2_tip")
 texture_mode = 2
 joint_mode = 2
 
-[node name="Mid" type="Line2D" parent="Tentacles/Tentacle1"]
+[node name="Mid" type="Line2D" parent="Tentacles/Tentacle1" unique_id=1623547422]
 width = 84.0
 texture = ExtResource("10_t2_mid")
 texture_mode = 2
 joint_mode = 2
 
-[node name="Base" type="Line2D" parent="Tentacles/Tentacle1"]
+[node name="Base" type="Line2D" parent="Tentacles/Tentacle1" unique_id=1947570041]
 width = 84.0
 texture = ExtResource("11_t2_base")
 texture_mode = 2
 joint_mode = 2
 
-[node name="Tentacle2" type="Node2D" parent="Tentacles"]
+[node name="Tentacle2" type="Node2D" parent="Tentacles" unique_id=1007785635]
 
-[node name="Tip" type="Line2D" parent="Tentacles/Tentacle2"]
+[node name="Tip" type="Line2D" parent="Tentacles/Tentacle2" unique_id=1122412769]
 width = 84.0
 texture = ExtResource("12_t3_tip")
 texture_mode = 2
 joint_mode = 2
 
-[node name="Mid" type="Line2D" parent="Tentacles/Tentacle2"]
+[node name="Mid" type="Line2D" parent="Tentacles/Tentacle2" unique_id=435216050]
 width = 84.0
 texture = ExtResource("13_t3_mid")
 texture_mode = 2
 joint_mode = 2
 
-[node name="Base" type="Line2D" parent="Tentacles/Tentacle2"]
+[node name="Base" type="Line2D" parent="Tentacles/Tentacle2" unique_id=1973506340]
 width = 84.0
 texture = ExtResource("14_t3_base")
 texture_mode = 2
 joint_mode = 2
 
-[node name="Tentacle3" type="Node2D" parent="Tentacles"]
+[node name="Tentacle3" type="Node2D" parent="Tentacles" unique_id=416404889]
 
-[node name="Tip" type="Line2D" parent="Tentacles/Tentacle3"]
+[node name="Tip" type="Line2D" parent="Tentacles/Tentacle3" unique_id=1505577910]
 width = 84.0
 texture = ExtResource("15_t4_tip")
 texture_mode = 2
 joint_mode = 2
 
-[node name="Mid" type="Line2D" parent="Tentacles/Tentacle3"]
+[node name="Mid" type="Line2D" parent="Tentacles/Tentacle3" unique_id=1654997512]
 width = 84.0
 texture = ExtResource("16_t4_mid")
 texture_mode = 2
 joint_mode = 2
 
-[node name="Base" type="Line2D" parent="Tentacles/Tentacle3"]
+[node name="Base" type="Line2D" parent="Tentacles/Tentacle3" unique_id=1072213355]
 width = 84.0
 texture = ExtResource("17_t4_base")
 texture_mode = 2
 joint_mode = 2
 
-[node name="Tentacle4" type="Node2D" parent="Tentacles"]
+[node name="Tentacle4" type="Node2D" parent="Tentacles" unique_id=1065367415]
 
-[node name="Tip" type="Line2D" parent="Tentacles/Tentacle4"]
+[node name="Tip" type="Line2D" parent="Tentacles/Tentacle4" unique_id=1617764980]
 width = 84.0
 texture = ExtResource("18_t5_tip")
 texture_mode = 2
 joint_mode = 2
 
-[node name="Mid" type="Line2D" parent="Tentacles/Tentacle4"]
+[node name="Mid" type="Line2D" parent="Tentacles/Tentacle4" unique_id=795550579]
 width = 84.0
 texture = ExtResource("19_t5_mid")
 texture_mode = 2
 joint_mode = 2
 
-[node name="Base" type="Line2D" parent="Tentacles/Tentacle4"]
+[node name="Base" type="Line2D" parent="Tentacles/Tentacle4" unique_id=1835810716]
 width = 84.0
 texture = ExtResource("20_t5_base")
 texture_mode = 2
 joint_mode = 2
 
-[node name="Tentacle5" type="Node2D" parent="Tentacles"]
+[node name="Tentacle5" type="Node2D" parent="Tentacles" unique_id=1289411014]
 
-[node name="Tip" type="Line2D" parent="Tentacles/Tentacle5"]
+[node name="Tip" type="Line2D" parent="Tentacles/Tentacle5" unique_id=328084302]
 width = 84.0
 texture = ExtResource("21_t6_tip")
 texture_mode = 2
 joint_mode = 2
 
-[node name="Mid" type="Line2D" parent="Tentacles/Tentacle5"]
+[node name="Mid" type="Line2D" parent="Tentacles/Tentacle5" unique_id=1702110440]
 width = 84.0
 texture = ExtResource("22_t6_mid")
 texture_mode = 2
 joint_mode = 2
 
-[node name="Base" type="Line2D" parent="Tentacles/Tentacle5"]
+[node name="Base" type="Line2D" parent="Tentacles/Tentacle5" unique_id=1504211755]
 width = 84.0
 texture = ExtResource("23_t6_base")
 texture_mode = 2
 joint_mode = 2
 
-[node name="Head" type="Sprite2D" parent="."]
+[node name="Head" type="Sprite2D" parent="." unique_id=1553558512]
 z_index = 1
 position = Vector2(0, -60)
 texture = ExtResource("2_head")
 
-[node name="Pieces" type="Node2D" parent="."]
+[node name="Pieces" type="Node2D" parent="." unique_id=1419486185]
 z_index = 2
 
-[node name="Face" type="Sprite2D" parent="."]
+[node name="Face" type="Sprite2D" parent="." unique_id=1566104896]
 z_index = 3
 position = Vector2(0, -20)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_worried")
 
-[node name="HpLabel" type="Label" parent="."]
+[node name="HpLabel" type="Label" parent="." unique_id=2010868141]
 z_index = 4
 offset_left = -180.0
 offset_top = -314.0
 offset_right = 180.0
 offset_bottom = -274.0
-mouse_filter = 2
 theme_type_variation = &"OutlinedLabel"
 text = "♥ Nyawa kraken"
 horizontal_alignment = 1
 
-[node name="HpBar" type="ProgressBar" parent="."]
+[node name="HpBar" type="ProgressBar" parent="." unique_id=815758688]
 z_index = 4
 offset_left = -180.0
 offset_top = -270.0
