@@ -1,0 +1,138 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/settings_menu.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://scenes/ui/components/ocean_backdrop.tscn" id="2_backdrop"]
+[ext_resource type="Script" path="res://scripts/ui/components/juicy_button.gd" id="3_juicy"]
+[ext_resource type="Texture2D" path="res://art/icon_retry.png" id="4_retry"]
+[ext_resource type="Texture2D" path="res://art/icon_back.png" id="5_back"]
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Backdrop" parent="." instance=ExtResource("2_backdrop")]
+layout_mode = 1
+show_raka = false
+dim = 0.35
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Center"]
+custom_minimum_size = Vector2(980, 0)
+layout_mode = 2
+
+[node name="Items" type="VBoxContainer" parent="Center/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Ribbon" type="PanelContainer" parent="Center/Panel/Items"]
+custom_minimum_size = Vector2(560, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"RibbonPanel"
+
+[node name="Title" type="Label" parent="Center/Panel/Items/Ribbon"]
+layout_mode = 2
+theme_type_variation = &"RibbonLabel"
+text = "Pengaturan"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicRow" type="HBoxContainer" parent="Center/Panel/Items"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="Center/Panel/Items/MusicRow"]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Volume musik"
+
+[node name="MusicSlider" type="HSlider" parent="Center/Panel/Items/MusicRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(480, 64)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 0.7
+
+[node name="SfxRow" type="HBoxContainer" parent="Center/Panel/Items"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="Center/Panel/Items/SfxRow"]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Volume efek suara"
+
+[node name="SfxSlider" type="HSlider" parent="Center/Panel/Items/SfxRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(480, 64)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 0.8
+
+[node name="FullscreenToggle" type="CheckButton" parent="Center/Panel/Items"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Layar penuh"
+
+[node name="ShakeToggle" type="CheckButton" parent="Center/Panel/Items"]
+unique_name_in_owner = true
+layout_mode = 2
+button_pressed = true
+text = "Getar layar"
+
+[node name="TutorialButton" type="Button" parent="Center/Panel/Items"]
+custom_minimum_size = Vector2(900, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Ulang tutorial"
+icon = ExtResource("4_retry")
+script = ExtResource("3_juicy")
+
+[node name="ResetButton" type="Button" parent="Center/Panel/Items"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(900, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Hapus semua progres"
+script = ExtResource("3_juicy")
+
+[node name="InfoLabel" type="Label" parent="Center/Panel/Items"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="Center/Panel/Items"]
+custom_minimum_size = Vector2(900, 96)
+layout_mode = 2
+theme_type_variation = &"PrimaryButton"
+theme_override_font_sizes/font_size = 32
+text = "Simpan dan kembali"
+icon = ExtResource("5_back")
+script = ExtResource("3_juicy")
+
+[connection signal="value_changed" from="Center/Panel/Items/MusicRow/MusicSlider" to="." method="_on_music_changed"]
+[connection signal="value_changed" from="Center/Panel/Items/SfxRow/SfxSlider" to="." method="_on_sfx_changed"]
+[connection signal="toggled" from="Center/Panel/Items/FullscreenToggle" to="." method="_on_fullscreen_toggled"]
+[connection signal="toggled" from="Center/Panel/Items/ShakeToggle" to="." method="_on_shake_toggled"]
+[connection signal="pressed" from="Center/Panel/Items/TutorialButton" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="Center/Panel/Items/ResetButton" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="Center/Panel/Items/BackButton" to="." method="_on_back_pressed"]

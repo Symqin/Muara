@@ -1,0 +1,113 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/level/level.gd" id="1_level"]
+[ext_resource type="PackedScene" path="res://scenes/level/boat.tscn" id="2_boat"]
+[ext_resource type="Script" path="res://scripts/level/entity_layer.gd" id="3_entities"]
+[ext_resource type="PackedScene" path="res://scenes/level/raka.tscn" id="4_raka"]
+[ext_resource type="Script" path="res://scripts/level/tools/hook_tool.gd" id="5_hook"]
+[ext_resource type="Script" path="res://scripts/level/tools/net_tool.gd" id="6_net"]
+[ext_resource type="Script" path="res://scripts/level/tools/magnet_tool.gd" id="7_magnet"]
+[ext_resource type="Texture2D" path="res://art/hook.png" id="8_hook_tex"]
+[ext_resource type="Texture2D" path="res://art/net_open.png" id="9_net_tex"]
+[ext_resource type="Script" path="res://scripts/level/wave_director.gd" id="10_waves"]
+[ext_resource type="Script" path="res://scripts/level/kraken_fight.gd" id="11_fight"]
+[ext_resource type="Script" path="res://scripts/level/hint_system.gd" id="12_hints"]
+[ext_resource type="PackedScene" path="res://scenes/level/hud.tscn" id="13_hud"]
+[ext_resource type="PackedScene" path="res://scenes/level/pause_menu.tscn" id="14_pause"]
+[ext_resource type="Texture2D" path="res://art/bg_1_1_murky.png" id="15_bg_murky"]
+[ext_resource type="Texture2D" path="res://art/bg_1_1_clean.png" id="16_bg_clean"]
+[ext_resource type="Texture2D" path="res://art/fx_aim_dot.png" id="17_aim_dot"]
+[ext_resource type="Texture2D" path="res://art/fx_rope.png" id="18_rope"]
+[ext_resource type="Texture2D" path="res://art/fx_net_ring.png" id="19_net_ring"]
+[ext_resource type="Texture2D" path="res://art/fx_magnet_cone.png" id="20_cone"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_level")
+
+[node name="World" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="BgMurky" type="Sprite2D" parent="World"]
+unique_name_in_owner = true
+texture = ExtResource("15_bg_murky")
+centered = false
+
+[node name="BgClean" type="Sprite2D" parent="World"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("16_bg_clean")
+centered = false
+
+[node name="KrakenSlot" type="Node2D" parent="World"]
+unique_name_in_owner = true
+
+[node name="Boat" parent="World" instance=ExtResource("2_boat")]
+unique_name_in_owner = true
+
+[node name="Entities" type="Node2D" parent="World"]
+unique_name_in_owner = true
+script = ExtResource("3_entities")
+
+[node name="Raka" parent="World" instance=ExtResource("4_raka")]
+unique_name_in_owner = true
+
+[node name="HookTool" type="Node2D" parent="World"]
+unique_name_in_owner = true
+texture_repeat = 2
+script = ExtResource("5_hook")
+aim_dot_texture = ExtResource("17_aim_dot")
+rope_texture = ExtResource("18_rope")
+slot = 0
+tool_name = "Harpun"
+hook_texture = ExtResource("8_hook_tex")
+
+[node name="NetTool" type="Node2D" parent="World"]
+unique_name_in_owner = true
+script = ExtResource("6_net")
+net_texture = ExtResource("9_net_tex")
+ring_texture = ExtResource("19_net_ring")
+aim_dot_texture = ExtResource("17_aim_dot")
+slot = 1
+tool_name = "Jaring"
+start_ammo = 3
+boss_start_ammo = 4
+max_ammo = 5
+
+[node name="MagnetTool" type="Node2D" parent="World"]
+unique_name_in_owner = true
+script = ExtResource("7_magnet")
+cone_texture = ExtResource("20_cone")
+slot = 2
+tool_name = "Magnet"
+start_ammo = 2
+boss_start_ammo = 3
+max_ammo = 3
+
+[node name="FloatingTexts" type="Node2D" parent="World"]
+unique_name_in_owner = true
+z_index = 10
+
+[node name="WaveDirector" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("10_waves")
+
+[node name="KrakenFight" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("11_fight")
+
+[node name="Hints" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("12_hints")
+
+[node name="HudLayer" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="Hud" parent="HudLayer" instance=ExtResource("13_hud")]
+unique_name_in_owner = true
+
+[node name="PauseLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+layer = 10
+
+[node name="PauseMenu" parent="PauseLayer" instance=ExtResource("14_pause")]
+unique_name_in_owner = true

@@ -1,0 +1,135 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/summary_screen.gd" id="1_script"]
+[ext_resource type="Script" path="res://scripts/ui/components/juicy_button.gd" id="2_juicy"]
+[ext_resource type="Texture2D" path="res://art/icon_next.png" id="3_next"]
+[ext_resource type="Texture2D" path="res://art/icon_retry.png" id="4_retry"]
+[ext_resource type="Texture2D" path="res://art/icon_back.png" id="5_back"]
+
+[node name="SummaryScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+
+[node name="Dim" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.05, 0.12, 0.16, 0.4)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Center"]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+
+[node name="Items" type="VBoxContainer" parent="Center/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Ribbon" type="PanelContainer" parent="Center/Panel/Items"]
+custom_minimum_size = Vector2(760, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"RibbonPanel"
+
+[node name="TitleLabel" type="Label" parent="Center/Panel/Items/Ribbon"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"RibbonLabel"
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VerdictLabel" type="Label" parent="Center/Panel/Items"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+theme_override_font_sizes/font_size = 56
+horizontal_alignment = 1
+
+[node name="StarsLabel" type="Label" parent="Center/Panel/Items"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.68, 0.15, 1)
+theme_override_font_sizes/font_size = 56
+horizontal_alignment = 1
+
+[node name="StatsCenter" type="CenterContainer" parent="Center/Panel/Items"]
+layout_mode = 2
+
+[node name="Stats" type="GridContainer" parent="Center/Panel/Items/StatsCenter"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 60
+theme_override_constants/v_separation = 6
+columns = 2
+
+[node name="NoteLabel" type="Label" parent="Center/Panel/Items"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.44, 0.35, 1)
+theme_override_font_sizes/font_size = 26
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Buttons" type="HBoxContainer" parent="Center/Panel/Items"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="NextButton" type="Button" parent="Center/Panel/Items/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 96)
+layout_mode = 2
+theme_type_variation = &"PrimaryButton"
+theme_override_font_sizes/font_size = 30
+text = "Lanjut"
+icon = ExtResource("3_next")
+script = ExtResource("2_juicy")
+
+[node name="RetryButton" type="Button" parent="Center/Panel/Items/Buttons"]
+custom_minimum_size = Vector2(280, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Ulangi"
+icon = ExtResource("4_retry")
+script = ExtResource("2_juicy")
+
+[node name="MenuButton" type="Button" parent="Center/Panel/Items/Buttons"]
+custom_minimum_size = Vector2(280, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Menu"
+icon = ExtResource("5_back")
+script = ExtResource("2_juicy")
+
+[connection signal="pressed" from="Center/Panel/Items/Buttons/NextButton" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Center/Panel/Items/Buttons/RetryButton" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Center/Panel/Items/Buttons/MenuButton" to="." method="_on_menu_pressed"]

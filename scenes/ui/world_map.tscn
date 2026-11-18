@@ -1,0 +1,188 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/world_map.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://art/map_world.png" id="2_map"]
+[ext_resource type="PackedScene" path="res://scenes/ui/map_node.tscn" id="3_node"]
+[ext_resource type="Texture2D" path="res://art/portrait_raka.png" id="4_marker"]
+[ext_resource type="Script" path="res://scripts/ui/components/juicy_button.gd" id="5_juicy"]
+[ext_resource type="Texture2D" path="res://art/icon_back.png" id="6_back"]
+[ext_resource type="Texture2D" path="res://art/icon_play.png" id="7_play"]
+[ext_resource type="Texture2D" path="res://art/ui_map_dot.png" id="8_dot"]
+[ext_resource type="Texture2D" path="res://art/ui_map_ring.png" id="9_ring"]
+[ext_resource type="Texture2D" path="res://art/ui_map_pin.png" id="10_pin"]
+
+[node name="WorldMap" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+marker_texture = ExtResource("4_marker")
+dot_texture = ExtResource("8_dot")
+ring_texture = ExtResource("9_ring")
+pin_texture = ExtResource("10_pin")
+
+[node name="Map" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_map")
+expand_mode = 1
+
+[node name="Paths" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Nodes" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Node1_1" parent="Nodes" instance=ExtResource("3_node")]
+layout_mode = 0
+offset_left = 932.0
+offset_top = 664.0
+offset_right = 1028.0
+offset_bottom = 760.0
+segment_id = "1-1"
+
+[node name="Node1_2" parent="Nodes" instance=ExtResource("3_node")]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 472.0
+offset_right = 608.0
+offset_bottom = 568.0
+segment_id = "1-2"
+
+[node name="Node1_3" parent="Nodes" instance=ExtResource("3_node")]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 352.0
+offset_right = 338.0
+offset_bottom = 448.0
+segment_id = "1-3"
+
+[node name="Node2_1" parent="Nodes" instance=ExtResource("3_node")]
+layout_mode = 0
+offset_left = 1252.0
+offset_top = 542.0
+offset_right = 1348.0
+offset_bottom = 638.0
+segment_id = "2-1"
+
+[node name="Node2_2" parent="Nodes" instance=ExtResource("3_node")]
+layout_mode = 0
+offset_left = 1482.0
+offset_top = 252.0
+offset_right = 1578.0
+offset_bottom = 348.0
+segment_id = "2-2"
+
+[node name="Node2_3" parent="Nodes" instance=ExtResource("3_node")]
+layout_mode = 0
+offset_left = 1722.0
+offset_top = 592.0
+offset_right = 1818.0
+offset_bottom = 688.0
+segment_id = "2-3"
+
+[node name="Header" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 24.0
+offset_right = 830.0
+offset_bottom = 150.0
+mouse_filter = 2
+
+[node name="Texts" type="VBoxContainer" parent="Header"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Title" type="Label" parent="Header/Texts"]
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+text = "Peta Perjalanan Raka"
+
+[node name="Subtitle" type="Label" parent="Header/Texts"]
+layout_mode = 2
+theme_type_variation = &"SubtleLabel"
+text = "Stage 1 menelusuri sungai ke hulu, Stage 2 membersihkan laut."
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1650.0
+offset_top = 30.0
+offset_right = 1890.0
+offset_bottom = 110.0
+theme_override_font_sizes/font_size = 28
+text = "Kembali"
+icon = ExtResource("6_back")
+script = ExtResource("5_juicy")
+
+[node name="InfoCard" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 830.0
+offset_right = 860.0
+offset_bottom = 1050.0
+
+[node name="Row" type="HBoxContainer" parent="InfoCard"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Texts" type="VBoxContainer" parent="InfoCard/Row"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="InfoTitle" type="Label" parent="InfoCard/Row/Texts"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+theme_override_font_sizes/font_size = 30
+text = "1-1  Muara"
+
+[node name="InfoDesc" type="Label" parent="InfoCard/Row/Texts"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(480, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.34, 0.4, 1)
+theme_override_font_sizes/font_size = 22
+autowrap_mode = 3
+
+[node name="InfoStats" type="Label" parent="InfoCard/Row/Texts"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.44, 0.35, 1)
+theme_override_font_sizes/font_size = 22
+
+[node name="PlayButton" type="Button" parent="InfoCard/Row"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(220, 96)
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"PrimaryButton"
+theme_override_font_sizes/font_size = 34
+text = "Main"
+icon = ExtResource("7_play")
+script = ExtResource("5_juicy")
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="InfoCard/Row/PlayButton" to="." method="_on_play_pressed"]

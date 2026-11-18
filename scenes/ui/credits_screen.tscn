@@ -1,0 +1,83 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/credits_screen.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://scenes/ui/components/ocean_backdrop.tscn" id="2_backdrop"]
+[ext_resource type="Script" path="res://scripts/ui/components/juicy_button.gd" id="3_juicy"]
+[ext_resource type="Texture2D" path="res://art/icon_back.png" id="4_back"]
+
+[node name="CreditsScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Backdrop" parent="." instance=ExtResource("2_backdrop")]
+layout_mode = 1
+show_raka = false
+dim = 0.4
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Center"]
+custom_minimum_size = Vector2(1300, 0)
+layout_mode = 2
+
+[node name="Items" type="VBoxContainer" parent="Center/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Ribbon" type="PanelContainer" parent="Center/Panel/Items"]
+custom_minimum_size = Vector2(560, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"RibbonPanel"
+
+[node name="Title" type="Label" parent="Center/Panel/Items/Ribbon"]
+layout_mode = 2
+theme_type_variation = &"RibbonLabel"
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Body" type="Label" parent="Center/Panel/Items"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Muara · Gimersia Inspire 2026 · Tim HaMinAtu
+
+ANGGOTA TIM
+(isi nama dan peran setiap anggota)
+
+ENGINE
+Godot Engine 4 (lisensi MIT) · godotengine.org/license
+
+FONT
+DejaVu Sans (lisensi Bitstream Vera / bebas) · lihat fonts/LICENSE-DejaVu.txt
+
+ASET GAMBAR, SUARA, DAN MUSIK
+Versi ini memakai aset ACUAN yang wajib diganti dengan karya tim.
+Catat setiap aset pengganti: nama, pembuat, sumber, lisensi.
+
+Game ini dibuat tanpa aset gambar, suara, atau musik buatan AI.
+(Pastikan kalimat ini benar sebelum submit.)"
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="Center/Panel/Items"]
+custom_minimum_size = Vector2(600, 96)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"PrimaryButton"
+theme_override_font_sizes/font_size = 32
+text = "Kembali ke menu"
+icon = ExtResource("4_back")
+script = ExtResource("3_juicy")
+
+[connection signal="pressed" from="Center/Panel/Items/BackButton" to="." method="_on_back_pressed"]

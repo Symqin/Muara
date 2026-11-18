@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/level/water_object.gd" id="1_script"]
+
+[node name="WaterObject" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="Passenger" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+scale = Vector2(0.8, 0.8)
+
+[node name="Sprite" type="Sprite2D" parent="."]

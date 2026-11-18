@@ -1,0 +1,93 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/story_screen.gd" id="1_script"]
+[ext_resource type="Script" path="res://scripts/ui/components/juicy_button.gd" id="2_juicy"]
+
+[node name="StoryScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.08, 0.16, 0.2, 1)
+
+[node name="Picture" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 320.0
+offset_top = 40.0
+offset_right = 1600.0
+offset_bottom = 760.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DialogBox" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 790.0
+offset_right = 1760.0
+offset_bottom = 1050.0
+mouse_filter = 2
+theme_type_variation = &"HudPanel"
+
+[node name="Row" type="HBoxContainer" parent="DialogBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 30
+
+[node name="Portrait" type="TextureRect" parent="DialogBox/Row"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(220, 220)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Texts" type="VBoxContainer" parent="DialogBox/Row"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="NameLabel" type="Label" parent="DialogBox/Row/Texts"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"DialogName"
+theme_override_font_sizes/font_size = 36
+
+[node name="TextLabel" type="Label" parent="DialogBox/Row/Texts"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1200, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 36
+autowrap_mode = 3
+
+[node name="HintLabel" type="Label" parent="DialogBox/Row/Texts"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"SubtleLabel"
+theme_override_font_sizes/font_size = 24
+
+[node name="SkipButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1680.0
+offset_top = 30.0
+offset_right = 1880.0
+offset_bottom = 110.0
+theme_override_font_sizes/font_size = 26
+text = "Lewati"
+script = ExtResource("2_juicy")
+
+[connection signal="pressed" from="SkipButton" to="." method="_on_skip_pressed"]

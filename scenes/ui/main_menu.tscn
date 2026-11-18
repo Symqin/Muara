@@ -1,0 +1,153 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://scenes/ui/components/ocean_backdrop.tscn" id="2_backdrop"]
+[ext_resource type="Texture2D" path="res://art/title_logo.png" id="3_logo"]
+[ext_resource type="Script" path="res://scripts/ui/components/juicy_button.gd" id="4_juicy"]
+[ext_resource type="Texture2D" path="res://art/icon_play.png" id="5_play"]
+[ext_resource type="Texture2D" path="res://art/icon_map.png" id="6_map"]
+[ext_resource type="Texture2D" path="res://art/icon_settings.png" id="7_settings"]
+[ext_resource type="Texture2D" path="res://art/icon_credits.png" id="8_credits"]
+[ext_resource type="Texture2D" path="res://art/icon_exit.png" id="9_exit"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Backdrop" parent="." instance=ExtResource("2_backdrop")]
+layout_mode = 1
+
+[node name="Logo" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 90.0
+offset_top = 50.0
+offset_right = 930.0
+offset_bottom = 274.0
+mouse_filter = 2
+texture = ExtResource("3_logo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Tagline" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 200.0
+offset_top = 270.0
+offset_right = 840.0
+offset_bottom = 390.0
+mouse_filter = 2
+theme_type_variation = &"RibbonPanel"
+
+[node name="Text" type="Label" parent="Tagline"]
+layout_mode = 2
+theme_type_variation = &"RibbonLabel"
+theme_override_font_sizes/font_size = 28
+text = "Selamatkan sungai dan laut!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 150.0
+offset_top = 420.0
+offset_right = 710.0
+offset_bottom = 1000.0
+theme_override_constants/separation = 14
+
+[node name="PlayButton" type="Button" parent="Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(560, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_type_variation = &"PrimaryButton"
+theme_override_font_sizes/font_size = 42
+text = "Mulai"
+icon = ExtResource("5_play")
+alignment = 0
+script = ExtResource("4_juicy")
+
+[node name="MapButton" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(500, 80)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Peta Perjalanan"
+icon = ExtResource("6_map")
+alignment = 0
+script = ExtResource("4_juicy")
+
+[node name="SettingsButton" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(500, 80)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Pengaturan"
+icon = ExtResource("7_settings")
+alignment = 0
+script = ExtResource("4_juicy")
+
+[node name="CreditsButton" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(500, 80)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Credits"
+icon = ExtResource("8_credits")
+alignment = 0
+script = ExtResource("4_juicy")
+
+[node name="QuitButton" type="Button" parent="Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 80)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Keluar"
+icon = ExtResource("9_exit")
+alignment = 0
+script = ExtResource("4_juicy")
+
+[node name="ProgressCard" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 1380.0
+offset_top = 890.0
+offset_right = 1880.0
+offset_bottom = 1010.0
+mouse_filter = 2
+
+[node name="Row" type="HBoxContainer" parent="ProgressCard"]
+layout_mode = 2
+theme_override_constants/separation = 22
+
+[node name="StarsLabel" type="Label" parent="ProgressCard/Row"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.62, 0.12, 1)
+theme_override_font_sizes/font_size = 30
+text = "★ 0 / 18"
+
+[node name="SegmentsLabel" type="Label" parent="ProgressCard/Row"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Segmen 1 / 6"
+vertical_alignment = 1
+
+[node name="Footer" type="Label" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 1036.0
+offset_right = 1240.0
+offset_bottom = 1072.0
+theme_type_variation = &"OutlinedLabel"
+theme_override_font_sizes/font_size = 20
+text = "Tim HaMinAtu · Gimersia Inspire 2026 · Versi acuan: semua aset wajib diganti tim"
+
+[connection signal="pressed" from="Buttons/PlayButton" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Buttons/MapButton" to="." method="_on_map_pressed"]
+[connection signal="pressed" from="Buttons/SettingsButton" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Buttons/CreditsButton" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Buttons/QuitButton" to="." method="_on_quit_pressed"]

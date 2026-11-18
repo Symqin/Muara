@@ -1,0 +1,190 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/level/kraken/kraken.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://art/kraken_head.png" id="2_head"]
+[ext_resource type="Texture2D" path="res://art/kraken_face.png" id="3_worried"]
+[ext_resource type="Texture2D" path="res://art/kraken_face_hurt.png" id="4_hurt"]
+[ext_resource type="Texture2D" path="res://art/kraken_face_happy.png" id="5_happy"]
+[ext_resource type="Texture2D" path="res://art/kraken_tentacle_1_tip.png" id="6_t1_tip"]
+[ext_resource type="Texture2D" path="res://art/kraken_tentacle_1_mid.png" id="7_t1_mid"]
+[ext_resource type="Texture2D" path="res://art/kraken_tentacle_1_base.png" id="8_t1_base"]
+[ext_resource type="Texture2D" path="res://art/kraken_tentacle_2_tip.png" id="9_t2_tip"]
+[ext_resource type="Texture2D" path="res://art/kraken_tentacle_2_mid.png" id="10_t2_mid"]
+[ext_resource type="Texture2D" path="res://art/kraken_tentacle_2_base.png" id="11_t2_base"]
+[ext_resource type="Texture2D" path="res://art/kraken_tentacle_3_tip.png" id="12_t3_tip"]
+[ext_resource type="Texture2D" path="res://art/kraken_tentacle_3_mid.png" id="13_t3_mid"]
+[ext_resource type="Texture2D" path="res://art/kraken_tentacle_3_base.png" id="14_t3_base"]
+[ext_resource type="Texture2D" path="res://art/kraken_tentacle_4_tip.png" id="15_t4_tip"]
+[ext_resource type="Texture2D" path="res://art/kraken_tentacle_4_mid.png" id="16_t4_mid"]
+[ext_resource type="Texture2D" path="res://art/kraken_tentacle_4_base.png" id="17_t4_base"]
+[ext_resource type="Texture2D" path="res://art/kraken_tentacle_5_tip.png" id="18_t5_tip"]
+[ext_resource type="Texture2D" path="res://art/kraken_tentacle_5_mid.png" id="19_t5_mid"]
+[ext_resource type="Texture2D" path="res://art/kraken_tentacle_5_base.png" id="20_t5_base"]
+[ext_resource type="Texture2D" path="res://art/kraken_tentacle_6_tip.png" id="21_t6_tip"]
+[ext_resource type="Texture2D" path="res://art/kraken_tentacle_6_mid.png" id="22_t6_mid"]
+[ext_resource type="Texture2D" path="res://art/kraken_tentacle_6_base.png" id="23_t6_base"]
+
+[node name="Kraken" type="Node2D"]
+position = Vector2(1440, 520)
+script = ExtResource("1_script")
+face_worried = ExtResource("3_worried")
+face_hurt = ExtResource("4_hurt")
+face_happy = ExtResource("5_happy")
+
+[node name="Tentacles" type="Node2D" parent="."]
+
+[node name="Tentacle0" type="Node2D" parent="Tentacles"]
+
+[node name="Tip" type="Line2D" parent="Tentacles/Tentacle0"]
+width = 84.0
+texture = ExtResource("6_t1_tip")
+texture_mode = 2
+joint_mode = 2
+
+[node name="Mid" type="Line2D" parent="Tentacles/Tentacle0"]
+width = 84.0
+texture = ExtResource("7_t1_mid")
+texture_mode = 2
+joint_mode = 2
+
+[node name="Base" type="Line2D" parent="Tentacles/Tentacle0"]
+width = 84.0
+texture = ExtResource("8_t1_base")
+texture_mode = 2
+joint_mode = 2
+
+[node name="Tentacle1" type="Node2D" parent="Tentacles"]
+
+[node name="Tip" type="Line2D" parent="Tentacles/Tentacle1"]
+width = 84.0
+texture = ExtResource("9_t2_tip")
+texture_mode = 2
+joint_mode = 2
+
+[node name="Mid" type="Line2D" parent="Tentacles/Tentacle1"]
+width = 84.0
+texture = ExtResource("10_t2_mid")
+texture_mode = 2
+joint_mode = 2
+
+[node name="Base" type="Line2D" parent="Tentacles/Tentacle1"]
+width = 84.0
+texture = ExtResource("11_t2_base")
+texture_mode = 2
+joint_mode = 2
+
+[node name="Tentacle2" type="Node2D" parent="Tentacles"]
+
+[node name="Tip" type="Line2D" parent="Tentacles/Tentacle2"]
+width = 84.0
+texture = ExtResource("12_t3_tip")
+texture_mode = 2
+joint_mode = 2
+
+[node name="Mid" type="Line2D" parent="Tentacles/Tentacle2"]
+width = 84.0
+texture = ExtResource("13_t3_mid")
+texture_mode = 2
+joint_mode = 2
+
+[node name="Base" type="Line2D" parent="Tentacles/Tentacle2"]
+width = 84.0
+texture = ExtResource("14_t3_base")
+texture_mode = 2
+joint_mode = 2
+
+[node name="Tentacle3" type="Node2D" parent="Tentacles"]
+
+[node name="Tip" type="Line2D" parent="Tentacles/Tentacle3"]
+width = 84.0
+texture = ExtResource("15_t4_tip")
+texture_mode = 2
+joint_mode = 2
+
+[node name="Mid" type="Line2D" parent="Tentacles/Tentacle3"]
+width = 84.0
+texture = ExtResource("16_t4_mid")
+texture_mode = 2
+joint_mode = 2
+
+[node name="Base" type="Line2D" parent="Tentacles/Tentacle3"]
+width = 84.0
+texture = ExtResource("17_t4_base")
+texture_mode = 2
+joint_mode = 2
+
+[node name="Tentacle4" type="Node2D" parent="Tentacles"]
+
+[node name="Tip" type="Line2D" parent="Tentacles/Tentacle4"]
+width = 84.0
+texture = ExtResource("18_t5_tip")
+texture_mode = 2
+joint_mode = 2
+
+[node name="Mid" type="Line2D" parent="Tentacles/Tentacle4"]
+width = 84.0
+texture = ExtResource("19_t5_mid")
+texture_mode = 2
+joint_mode = 2
+
+[node name="Base" type="Line2D" parent="Tentacles/Tentacle4"]
+width = 84.0
+texture = ExtResource("20_t5_base")
+texture_mode = 2
+joint_mode = 2
+
+[node name="Tentacle5" type="Node2D" parent="Tentacles"]
+
+[node name="Tip" type="Line2D" parent="Tentacles/Tentacle5"]
+width = 84.0
+texture = ExtResource("21_t6_tip")
+texture_mode = 2
+joint_mode = 2
+
+[node name="Mid" type="Line2D" parent="Tentacles/Tentacle5"]
+width = 84.0
+texture = ExtResource("22_t6_mid")
+texture_mode = 2
+joint_mode = 2
+
+[node name="Base" type="Line2D" parent="Tentacles/Tentacle5"]
+width = 84.0
+texture = ExtResource("23_t6_base")
+texture_mode = 2
+joint_mode = 2
+
+[node name="Head" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -60)
+texture = ExtResource("2_head")
+
+[node name="Pieces" type="Node2D" parent="."]
+z_index = 2
+
+[node name="Face" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(0, -20)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_worried")
+
+[node name="HpLabel" type="Label" parent="."]
+z_index = 4
+offset_left = -180.0
+offset_top = -314.0
+offset_right = 180.0
+offset_bottom = -274.0
+mouse_filter = 2
+theme_type_variation = &"OutlinedLabel"
+text = "♥ Nyawa kraken"
+horizontal_alignment = 1
+
+[node name="HpBar" type="ProgressBar" parent="."]
+z_index = 4
+offset_left = -180.0
+offset_top = -270.0
+offset_right = 180.0
+offset_bottom = -244.0
+mouse_filter = 2
+theme_type_variation = &"HudBarGreen"
+value = 100.0
+show_percentage = false
