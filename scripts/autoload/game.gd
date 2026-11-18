@@ -14,6 +14,7 @@ var music_vol = 0.7
 var sfx_vol = 0.8
 var fullscreen = false
 var shake = true
+var debug_hitbox = false  # F3 saat bermain: tampilkan hitbox (tidak disimpan)
 
 var _music = null
 var _sfx_players = []

@@ -24,6 +24,9 @@ Renderer: *Compatibility* (aman untuk web dan laptop lama). Resolusi dasar 1920Ã
 | 1 / 2 / 3 atau scroll | Ganti alat: Harpun, Jaring, Magnet |
 | Esc atau P | Jeda |
 | Klik / Spasi / Enter | Lanjut dialog |
+| F3 | Tampilkan/sembunyikan hitbox (alat bantu tes). Kuning = kulit kraken/kayu, hijau = sampah, merah = makhluk, biru = pickup, putih = kait |
+
+Hitbox kepala kraken adalah poligon `HeadHitbox/Shape` di `scenes/level/kraken/kraken.tscn`: titiknya bisa digeser langsung di editor supaya pas dengan gambar kepala.
 
 Alat terbuka bertahap: Harpun sejak 1-1, Jaring sejak 1-2, Magnet sejak 2-1.
 

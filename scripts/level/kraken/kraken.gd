@@ -12,8 +12,10 @@ const TEX = {
 	"bag": "trash_bag", "bottle": "trash_bottle", "sachet": "trash_sachet_1", "styro": "trash_styro",
 	"sandal": "trash_sandal", "ghostnet": "trash_ghostnet", "tire": "trash_tire", "can": "trash_can",
 }
+# Hitbox kepala = poligon HeadHitbox/Shape di scene (atur titiknya di editor).
+# HEAD_C/HEAD_R hanya dipakai untuk menaruh sampah di kepala dan posisi teks.
 const HEAD_C = Vector2(0, -70)        # pusat kepala (lokal)
-const HEAD_R = 140.0                  # jari-jari kulit kepala untuk tabrakan
+const HEAD_R = 140.0                  # perkiraan jari-jari kepala
 const SEGS = 16                       # jumlah ruas per tentakel
 # titik (dari 0..SEGS) yang dipakai tiap potongan; saling tumpang satu ruas supaya sambungan tertutup
 const PART_RANGE = {"Base": [0, 6], "Mid": [5, 11], "Tip": [10, 16]}
@@ -49,6 +51,18 @@ var happy: bool = false
 @onready var piece_layer: Node2D = $Pieces
 @onready var hp_bar: ProgressBar = $HpBar
 @onready var tentacle_nodes: Array = $Tentacles.get_children()
+@onready var head_shape: CollisionPolygon2D = $HeadHitbox/Shape
+
+var _debug_layer: Node2D = null
+
+
+func _ready() -> void:
+	# Lapisan gambar hitbox (F3 saat bermain), di atas semua bagian kraken.
+	_debug_layer = Node2D.new()
+	_debug_layer.z_index = 10
+	_debug_layer.visible = false
+	_debug_layer.draw.connect(_draw_debug)
+	add_child(_debug_layer)
 
 
 func setup(extra: int) -> void:
@@ -148,6 +162,28 @@ func tick(delta):
 	_update_tentacles()
 	for p in pieces:
 		_place(p)
+	if Game.debug_hitbox or _debug_layer.visible:
+		_debug_layer.visible = Game.debug_hitbox
+		_debug_layer.queue_redraw()
+
+
+# Gambar hitbox: kuning = kulit (melukai kraken), hijau = sampah yang bisa diambil.
+func _draw_debug() -> void:
+	if not Game.debug_hitbox:
+		return
+	var body_col = Color(1, 0.85, 0.1, 0.9)
+	var pts = head_shape.polygon
+	if pts.size() > 1:
+		var closed = PackedVector2Array(pts)
+		closed.append(pts[0])
+		for i in range(closed.size()):
+			closed[i] += head_shape.position
+		_debug_layer.draw_polyline(closed, body_col, 2.0)
+	for tp in tents:
+		for k in range(tp.size()):
+			_debug_layer.draw_arc(tp[k], _seg_r(k), 0.0, TAU, 20, body_col, 1.5)
+	for p in pieces:
+		_debug_layer.draw_arc(p["sprite"].position, PIECE_R, 0.0, TAU, 20, Color(0.3, 1, 0.4, 0.9), 2.0)
 
 
 # ------------------------------------------------------------------ API untuk Level, alat, dan KrakenFight
@@ -169,12 +205,27 @@ func hp_fraction():
 func hit_body(p, extra):
 	var lp = to_local(p)
 	var e = extra / size_scale
-	if lp.distance_to(HEAD_C) < HEAD_R + e:
+	if _in_head(lp, e):
 		return true
 	for pts in tents:
 		for k in range(pts.size()):
 			if lp.distance_to(pts[k]) < _seg_r(k) + e:
 				return true
+	return false
+
+
+# Titik lokal lp di dalam poligon kepala, atau dalam jarak e dari tepinya?
+func _in_head(lp: Vector2, e: float) -> bool:
+	var poly = head_shape.polygon
+	var q = lp - head_shape.position
+	if Geometry2D.is_point_in_polygon(q, poly):
+		return true
+	if e <= 0.0:
+		return false
+	for i in range(poly.size()):
+		var c = Geometry2D.get_closest_point_to_segment(q, poly[i], poly[(i + 1) % poly.size()])
+		if q.distance_to(c) < e:
+			return true
 	return false
 
 

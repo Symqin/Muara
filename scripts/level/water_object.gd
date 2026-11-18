@@ -177,6 +177,37 @@ func toboss_done() -> bool:
 	return motion == "toboss" and t >= dur
 
 
+func _ready() -> void:
+	refresh_debug()
+
+
+# Dipanggil saat F3 ditekan. Saat hitbox tampil, gambar objek dipindah ke belakang garis hitbox.
+func refresh_debug() -> void:
+	sprite.show_behind_parent = Game.debug_hitbox
+	passenger.show_behind_parent = Game.debug_hitbox
+	queue_redraw()
+
+
+# Hitbox (F3): bentuk yang sama dengan hit_test di bawah. Hiasan tidak punya hitbox.
+func _draw() -> void:
+	if not Game.debug_hitbox or state == "decor":
+		return
+	var col = Color(0.3, 1, 0.4, 0.9)
+	if cat == "creature":
+		col = Color(1, 0.4, 0.4, 0.9)
+	elif cat == "obstacle":
+		col = Color(1, 0.85, 0.1, 0.9)
+	elif cat == "pickup":
+		col = Color(0.4, 0.8, 1, 0.9)
+	# digambar di ruang lokal; batalkan rotasi/skala supaya sama dengan hit_test
+	draw_set_transform(Vector2.ZERO, -rotation, Vector2.ONE / scale.abs().max(Vector2(0.01, 0.01)))
+	if kind == "wood":
+		draw_rect(Rect2(-84, -22, 168, 44), col, false, 2.0)
+	else:
+		draw_arc(Vector2.ZERO, radius, 0.0, TAU, 24, col, 2.0)
+	draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
+
+
 # Apakah titik p mengenai objek ini? Kayu memakai kotak, lainnya lingkaran.
 func hit_test(p: Vector2, extra: float) -> bool:
 	if kind == "wood":

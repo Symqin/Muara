@@ -199,7 +199,9 @@ NODE_PROP_OK = {"layout_mode", "anchors_preset", "anchor_left", "anchor_top", "a
                 "horizontal_alignment", "vertical_alignment", "custom_minimum_size", "size_flags_horizontal",
                 "size_flags_vertical", "expand_mode", "stretch_mode", "color", "icon", "alignment", "focus_mode",
                 "process_mode", "layer", "value", "show_percentage", "max_value", "step", "button_pressed",
-                "autowrap_mode", "columns"}
+                "autowrap_mode", "columns",
+                # Area2D / CollisionPolygon2D (hitbox kepala kraken)
+                "collision_layer", "collision_mask", "monitoring", "monitorable", "polygon"}
 
 scenes = {}
 for p in glob.glob(os.path.join(ROOT, "scenes", "**", "*.tscn"), recursive=True):
@@ -207,7 +209,7 @@ for p in glob.glob(os.path.join(ROOT, "scenes", "**", "*.tscn"), recursive=True)
 
 
 def parse_scene(src):
-    ext = dict((i, (t, path)) for t, path, i in re.findall(r'\[ext_resource type="(\w+)" path="([^"]+)" id="([^"]+)"\]', src))
+    ext = dict((i, (t, path)) for t, path, i in re.findall(r'\[ext_resource type="(\w+)"(?: uid="[^"]*")? path="([^"]+)" id="([^"]+)"\]', src))
     nodes = []
     for block in re.split(r"\n(?=\[)", src):
         hm = re.match(r'\[node name="([^"]+)"(.*?)\]', block)

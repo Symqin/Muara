@@ -149,3 +149,5 @@ func _draw() -> void:
 			draw_set_transform(hook["pos"], hook["dir"].angle(), Vector2.ONE)
 			draw_texture(hook_texture, Vector2(-30, -12))
 			draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
+		if Game.debug_hitbox:
+			draw_arc(hook["pos"], hit_radius, 0.0, TAU, 16, Color(1, 1, 1, 0.95), 2.0)

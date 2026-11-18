@@ -272,6 +272,8 @@ func _unhandled_input(event: InputEvent) -> void:
 				select_tool(2)
 			KEY_ESCAPE, KEY_P:
 				open_pause()
+			KEY_F3:
+				toggle_debug_hitbox()
 			KEY_SPACE, KEY_ENTER, KEY_KP_ENTER:
 				if state == "intro":
 					_skip_intro()
@@ -297,6 +299,14 @@ func select_tool(i: int) -> void:
 	cur_tool = i
 	raka.show_tool(i)
 	magnet_tool.cancel()
+
+
+# Alat bantu tes: tampilkan/sembunyikan semua hitbox.
+func toggle_debug_hitbox() -> void:
+	Game.debug_hitbox = not Game.debug_hitbox
+	for e in entities.items:
+		if is_instance_valid(e):
+			e.refresh_debug()
 
 
 func _cycle_tool(step: int) -> void:
