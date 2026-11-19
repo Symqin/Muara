@@ -1,5 +1,5 @@
 # Data gelombang dan jenis objek Muara.
-# File ini dibuat oleh tools/gen_data.py dari GDD bagian 7, 8, dan 10. Ubah angka di sini setelah playtest.
+# Data dari GDD bagian 7, 8, dan 10. Ubah angka di sini setelah playtest.
 class_name LevelData
 extends RefCounted
 

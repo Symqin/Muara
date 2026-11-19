@@ -14,7 +14,7 @@ Ini game *Muara* dalam versi yang sudah bisa dimainkan dari awal sampai akhir: m
 
 Renderer: *Compatibility* (aman untuk web dan laptop lama). Resolusi dasar 1920×1080, otomatis menyesuaikan layar.
 
-**Catatan jujur:** game ini ditulis tanpa bisa menjalankan Godot (hanya dicek dengan pemeriksa statis `tools/check_project.py`). Jalankan dulu, mainkan semua segmen, dan kalau muncul error merah di panel *Debugger/Output*, salin pesannya (beserta nama file dan nomor baris) untuk diperbaiki.
+**Catatan jujur:** game ini ditulis tanpa bisa menjalankan Godot (hanya dicek dengan pemeriksa statis). Jalankan dulu, mainkan semua segmen, dan kalau muncul error merah di panel *Debugger/Output*, salin pesannya (beserta nama file dan nomor baris) untuk diperbaiki.
 
 ## 2. Kontrol
 | Input | Fungsi |
@@ -45,7 +45,6 @@ Setiap segmen dibuka dengan adegan singkat: Raka terjun dari kapal kakek lalu tu
 2. *Project → Export*. Preset sudah disiapkan:
    - **Web** → `build/web/index.html`. *Thread Support* **mati** supaya jalan di itch.io tanpa pengaturan SharedArrayBuffer. Zip isi folder `build/web/` lalu upload ke itch.io sebagai *HTML*, viewport 1920×1080 (centang *fullscreen button*).
    - **Windows** → `build/windows/Muara.exe` (cadangan untuk juri).
-3. Folder `tools/` tidak ikut ter-export.
 
 ## 4. Struktur proyek
 
@@ -78,7 +77,7 @@ scenes/
 scripts/
   autoload/game.gd                 progres, simpanan (user://muara_save.cfg), audio, pengaturan, deteksi HP
   core/main.gd                     pengatur layar
-  data/level_data.gd               DATA LEVEL: jenis objek, segmen, gelombang (dibuat tools/gen_data.py)
+  data/level_data.gd               DATA LEVEL: jenis objek, segmen, gelombang
   data/story_data.gd               SEMUA TEKS CERITA: adegan, dialog awal segmen, deskripsi peta
   ui/...                           satu skrip per layar + components/ (juicy_button, ocean_backdrop)
   level/
@@ -89,7 +88,6 @@ scripts/
     wave_director.gd               gelombang segmen biasa
     kraken_fight.gd kraken/kraken.gd  pertarungan 2-3 dan kraken-nya
     hint_system.gd hud.gd tool_slot.gd pause_menu.gd raka.gd boat.gd floating_text.gd
-tools/                             generator aset/data acuan + check_project.py (pemeriksa statis)
 ```
 
 ### Cara mengubah hal yang sering diubah
@@ -102,7 +100,7 @@ tools/                             generator aset/data acuan + check_project.py 
 | Lemparan, jaring hantu, badai serpihan kraken | node `KrakenFight` di `level.tscn` |
 | Nyawa kraken, jumlah sampah dasar, porsi kaleng | root `kraken.tscn` |
 | Teks cerita/dialog/deskripsi peta | `scripts/data/story_data.gd` |
-| Isi gelombang | `scripts/data/level_data.gd` atau `tools/gen_data.py` |
+| Isi gelombang | `scripts/data/level_data.gd` |
 | Posisi titik di peta | geser node `Node1_1` … `Node2_3` di `world_map.tscn` |
 
 ### Menambah alat baru (contoh: Vakum)
@@ -110,12 +108,11 @@ tools/                             generator aset/data acuan + check_project.py 
 2. Tambah node `VacuumTool` di `World` pada `level.tscn`, pasang skripnya, isi `slot = 3`.
 3. Tambah ke array `tools` di `level.gd` dan tambah `Slot4` (instance `tool_slot.tscn`) di `hud.tscn`.
 
-Sebelum commit, jalankan `python3 tools/check_project.py .` untuk mengecek node/sinyal/properti yang hilang.
+Sebelum commit, buka proyek di Godot 4.7.2 dan mainkan segmen yang diubah untuk memastikan tidak ada error di panel *Debugger*.
 
 ## 5. Mengubah keseimbangan level
-- Cara cepat: edit angka di `scripts/data/level_data.gd` (`KINDS` = jenis sampah/makhluk, `SEGMENTS` = target, oksigen, arus; `WAVES` = jadwal muncul tiap gelombang).
-- Cara rapi: ubah `tools/gen_data.py`, lalu jalankan `python3 tools/gen_data.py scripts/data/level_data.gd` dari folder proyek. Skrip ini otomatis memindah jalur ikan agar tidak menumpuk dengan sampah, mengecek jumlah sampah, dan mengecek waktu spawn terakhir.
-- Gambar acuan dibuat ulang dengan `python3 tools/gen_assets.py .` (butuh Pillow, numpy, scipy). Tidak perlu dijalankan kalau tim sudah mengganti aset sendiri, karena akan menimpa file di `art/`.
+- Edit angka di `scripts/data/level_data.gd` (`KINDS` = jenis sampah/makhluk, `SEGMENTS` = target, oksigen, arus; `WAVES` = jadwal muncul tiap gelombang).
+- Kalau menambah atau mengurangi sampah di `WAVES`, samakan `total` segmen itu di `SEGMENTS` dengan jumlah sampah di semua gelombangnya (target dan bintang dihitung dari angka ini).
 - Angka alat (kecepatan harpun, radius jaring, kerucut magnet, dsb.) diatur di Inspector node alat pada `scenes/level/level.tscn`.
 - Teks dialog awal tiap segmen dan cerita: `scripts/data/story_data.gd`.
 
