@@ -1,6 +1,20 @@
 # Muara: Proyek Godot (Tim HaMinAtu, Gimersia Inspire 2026)
 
-Ini game *Muara* dalam versi yang sudah bisa dimainkan dari awal sampai akhir: menu, cerita, 6 segmen (Sungai 1-1 s.d. 1-3, Laut 2-1 s.d. 2-3 menyelamatkan kraken yang terlilit sampah), ringkasan, simpanan progres, pengaturan, dan credits.
+## Tentang Game Ini
+
+*Muara* adalah **game menyelam pembersihan sampah** (diver/side-view) untuk **satu pemain**, dibuat dengan **Godot 4** untuk PC dan HP (HTML5/Android).
+
+Pemain berperan sebagai **Raka, seorang anak penyelam** yang membersihkan sampah dari **sungai (muara)** sampai ke **laut** agar air kembali bersih dan kakek bisa menangkap ikan lagi. Menggunakan **Harpun, Jaring Lontar, dan Magnet Pulsa**, Raka mengangkat sampah sebelum hanyut ke laut — tanpa melukai ikan, ubur-ubur, atau penyu. Puncaknya, Raka menyelamatkan **kraken yang terlilit sampah** di sarangnya.
+
+Fitur utama:
+- **6 segmen** dalam 2 babak: *Sungai* (1-1 s.d. 1-3) dan *Laut* (2-1 s.d. 2-3).
+- **Alat yang terbuka bertahap**: Harpun (1-1), Jaring (1-2), Magnet (2-1).
+- **3 gelombang sampah per segmen** — makin lama makin deras dan bervariasi.
+- **Boss 2-3**: selamatkan kraken dari lilitan sampah, bukan mengalahkannya.
+- **Sistem oksigen, skor, combo, dan bintang** per segmen, plus **progres tersimpan**.
+- **Kontrol mouse/keyboard dan layar sentuh** (HP/browser).
+
+Status: versi bisa dimainkan dari awal sampai akhir (menu, cerita, semua segmen, ringkasan, simpanan, pengaturan, credits).
 
 > **PENTING: semua gambar, suara, dan musik di `art/` dan `audio/` adalah ASET ACUAN buatan generator (Python, dibuat oleh AI).**
 > Aturan Gimersia melarang aset buatan AI. **Semua file itu wajib diganti dengan karya tim sebelum submit.**
