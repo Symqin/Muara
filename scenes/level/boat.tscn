@@ -1,7 +1,7 @@
-[gd_scene format=3]
+[gd_scene load_steps=3 format=3 uid="uid://dqxr6nlgta6k2"]
 
-[ext_resource type="Script" path="res://scripts/level/boat.gd" id="1_script"]
-[ext_resource type="Texture2D" path="res://art/boat.png" id="2_tex"]
+[ext_resource type="Script" uid="uid://t34ah45trfdw" path="res://scripts/level/boat.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://bhiqlmlxshwrg" path="res://art/boat.png" id="2_tex"]
 
 [node name="Boat" type="Sprite2D"]
 position = Vector2(330, 202)
