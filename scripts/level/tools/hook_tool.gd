@@ -146,8 +146,8 @@ func _draw() -> void:
 		var finish = hook["pos"]
 
 		# Kedalaman lengkungan berdasarkan state harpoon
-		var bend = 110.0 if hook["state"] == "out" else 80.0 
-		
+		var bend = 110.0 if hook["state"] == "out" else 80.0
+
 		# Titik kontrol kurva
 		var control = (start + finish) / 2.0
 		control.y += bend
@@ -173,3 +173,5 @@ func _draw() -> void:
 			draw_set_transform(hook["pos"], hook["dir"].angle(), Vector2.ONE)
 			draw_texture(hook_texture, Vector2(-30, -12))
 			draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
+		if Game.debug_hitbox:
+			draw_arc(hook["pos"], hit_radius, 0.0, TAU, 16, Color(1, 1, 1, 0.95), 2.0)
