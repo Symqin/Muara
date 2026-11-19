@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=59 format=3 uid="uid://sncgv3tv8amu"]
+[gd_resource type="Theme" format=3 uid="uid://sncgv3tv8amu"]
 
 [ext_resource type="FontFile" uid="uid://dof4btg7xvxqf" path="res://fonts/DejaVuSans.ttf" id="1_font"]
 [ext_resource type="FontFile" uid="uid://deb7attdt7qug" path="res://fonts/DejaVuSans-Bold.ttf" id="2_bold"]
