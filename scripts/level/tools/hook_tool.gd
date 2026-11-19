@@ -135,19 +135,41 @@ func _arrive() -> void:
 func _draw() -> void:
 	if level == null or level.state == "ended":
 		return
+
 	var m = level.raka.muzzle()
+
 	if aiming_now():
 		draw_dots(m, m + level.raka.aim_dir * 620.0, Color(1, 1, 1, 0.75))
+
 	if is_busy():
-		if rope_texture != null:
-			var v = hook["pos"] - m
-			draw_set_transform(m, v.angle(), Vector2.ONE)
-			var h = rope_texture.get_height()
-			draw_texture_rect(rope_texture, Rect2(0, -h * 0.5, v.length(), h), true)
-			draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
+		var start = m
+		var finish = hook["pos"]
+
+		# Kedalaman lengkungan berdasarkan state harpoon
+		var bend = 110.0 if hook["state"] == "out" else 80.0 
+		
+		# Titik kontrol kurva
+		var control = (start + finish) / 2.0
+		control.y += bend
+
+		# Membentuk kurva Bézier
+		var points = PackedVector2Array()
+
+		for i in range(31):
+			var t = float(i) / 30.0
+			var one_minus_t = 1.0 - t
+
+			var point = (
+				start * one_minus_t * one_minus_t
+				+ control * 2.0 * one_minus_t * t
+				+ finish * t * t
+			)
+
+			points.append(point)
+
+		draw_polyline(points, Color(0.92, 0.92, 0.9), 3.0)
+
 		if hook_texture != null:
 			draw_set_transform(hook["pos"], hook["dir"].angle(), Vector2.ONE)
 			draw_texture(hook_texture, Vector2(-30, -12))
 			draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
-		if Game.debug_hitbox:
-			draw_arc(hook["pos"], hit_radius, 0.0, TAU, 16, Color(1, 1, 1, 0.95), 2.0)
