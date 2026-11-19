@@ -1,0 +1,5 @@
+res://scenes/main.tscn
+res://resources/theme/muara_theme.tres
+res://scenes/level/kraken/kraken.tscn
+res://scenes/level/boat.tscn
+res://scenes/level/hud.tscn
